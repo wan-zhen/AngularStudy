@@ -1,0 +1,8 @@
+
+        <!-- Article START-->
+        <article class="post" id="post{{dindex}}" *ngFor="let item of dataService.data|slice:0:2;let dindex=index;">
+         <app-article-header [item]="item" (del)="dataService.doDelete($event)" (titleChanged)="dataService.changeTitle($event)"></app-article-header>
+         <app-article-body [item]="item"></app-article-body>
+        </article>
+
+        <!-- Article END-->

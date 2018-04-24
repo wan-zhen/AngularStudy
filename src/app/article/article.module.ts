@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ArticleListComponent } from './article-list/article-list.component';
+import { ArticleHeaderComponent } from './article-header/article-header.component';
+import { ArticleBodyComponent } from './article-body/article-body.component';
+import { DataService } from './data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
-  declarations: []
+  providers: [DataService],
+  declarations: [ArticleListComponent, ArticleHeaderComponent, ArticleBodyComponent],
+  exports: [ArticleListComponent]
 })
 export class ArticleModule { }
